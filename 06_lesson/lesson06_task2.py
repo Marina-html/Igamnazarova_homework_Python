@@ -8,10 +8,11 @@ driver.get("http://uitestingplayground.com/textinput")
 
 text_input = driver.find_element(By.CSS_SELECTOR, "input#newButtonName.form-control")
 text_input.send_keys("SkyPro")
+
+button = driver.find_element(By.CSS_SELECTOR, "button#updatingButton.btn.btn-primary").click()
 element = WebDriverWait(driver,20).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "button#updatingButton.btn.btn-primary"))
 )
+
 blue = element.text
 print(blue)
-
-driver.quit()
