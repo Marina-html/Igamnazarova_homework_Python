@@ -19,7 +19,7 @@ def test_calc(driver):
     calc_page.scroll_down()
     calc_page.perform_element()
     sleep(5)
-    calc_page.expectation()
+    calc_page.wait_for_result()
     result = calc_page.get_result()
     print(result)
 

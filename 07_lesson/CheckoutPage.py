@@ -21,10 +21,16 @@ class CheckoutPage:
 
         self.driver.find_element(By.CSS_SELECTOR, "#continue").click()
 
-        total_cost = self.driver.find_element(By.CLASS_NAME, "summary_total_label").text
-        total_cost_value = float(total_cost.split("$")[1])
-
-        assert total_cost_value == 58.29, f"Итоговая сумма должна быть 58.29, но получена {total_cost_value}"
+    def get_total_amount(self):
+        try:
+            total_cost = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "summary_total_label"))
+            ).text
+            total_cost_value = float(total_cost.split("$")[1])
+            return total_cost_value
+        except Exception as e:
+            print(f"An error occurred while retrieving the total amount: {e}")
+            return None
 
 
 

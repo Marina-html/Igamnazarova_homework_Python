@@ -27,7 +27,7 @@ class CalcPage:
         self.driver.find_element(By.XPATH, '//span[text()="8"]').click()
         self.driver.find_element(By.XPATH, '//span[text()="="]').click()
 
-    def expectation(self):
+    def wait_for_result(self):
         self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".screen")))
         self.wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".screen"), "15"))
 
