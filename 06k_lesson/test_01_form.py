@@ -1,14 +1,13 @@
-import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-
 from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 def test_form():
-    browser = webdriver.Edge()
+    browser = webdriver.Edge(service=EdgeService(
+    EdgeChromiumDriverManager().install()))
     browser.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
 
     text_input = browser.find_element(By.CSS_SELECTOR, '[name="first-name"]')
@@ -41,7 +40,7 @@ def test_form():
     button = browser.find_element(By.CSS_SELECTOR, "button.btn.btn-outline-primary.mt-3").click()
     browser.execute_script("arguments[0].scrollIntoView();", button)
     browser.execute_script("arguments[0].click();", button)
-    element = WebDriverWait(browser,30).until(
+    element = WebDriverWait(browser,90).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "button.btn.btn-outline-primary.mt-3"))
 )
 
