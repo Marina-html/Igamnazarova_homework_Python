@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 def test_slow_calculator():
     driver = webdriver.Chrome()
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
@@ -17,7 +18,7 @@ def test_slow_calculator():
     driver.find_element(By.XPATH, '//span[text()="+"]').click()
     driver.find_element(By.XPATH, '//span[text()="8"]').click()
     driver.find_element(By.XPATH, '//span[text()="="]').click()
-    element = WebDriverWait(driver, 50).until(
+    element = WebDriverWait(driver, 60).until(
     EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".screen"), "15")
 )
     res = driver.find_element(By.CSS_SELECTOR, ".screen").text
