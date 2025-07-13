@@ -1,10 +1,7 @@
 import requests
 import pytest
+from config.conftest import base_url, Token, Token_negative, ID_Project, projectID, projectID_negative
 
-base_url = "https://ru.yougile.com"
-Token = ""
-ID_Project = "30b0edd0-2059-4461-b4da-5cd130b32ef0"
-ID_Project_negative = "30b0edd0-2059-4461-b4da-5cd130b32ef01"
 
 @pytest.fixture
 def redakt_project():

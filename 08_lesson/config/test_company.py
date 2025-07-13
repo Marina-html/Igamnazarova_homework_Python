@@ -1,16 +1,12 @@
 import requests
 import pytest
-
-base_url = "https://ru.yougile.com"
-Token = ""
-Token_negative = "FrTm)))))))))))))))))))"
+from config.conftest import base_url, Token, Token_negative, ID_Project, projectID, projectID_negative
 
 @pytest.fixture
 def create_project():
     return test_create_new_project_positive()
 
 def test_create_new_project_positive():
-
     payload = {
         'title': 'ГосУслуги1000',
         'users': {

@@ -1,11 +1,7 @@
 import requests
 import pytest
+from config.conftest import base_url, Token, Token_negative, ID_Project, projectID, projectID_negative
 
-base_url = "https://ru.yougile.com"
-Token = ""
-ID_Project = "30b0edd0-2059-4461-b4da-5cd130b32ef0"
-projectID = "d56ce9d4-9090-431d-8bcb-fddbbcaafdc3"
-projectID_negative = "d56ce9d4-9090-431d-8bcb-fddbbcaafdc34"
 
 @pytest.fixture
 def get_project():

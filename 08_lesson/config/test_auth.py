@@ -1,7 +1,5 @@
 import requests
-
-base_url = "https://ru.yougile.com"
-Token = "FrTm3MDPs8+RPUOCsV1T2Acf34dcLaXECso9JJMJgnIj2S3lXrD3QLFjfFCYMXvR"
+from config.conftest import base_url, Token, Token_negative, ID_Project, projectID, projectID_negative
 
 def test_auth_you():
     you = {
