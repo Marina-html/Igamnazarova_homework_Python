@@ -30,3 +30,5 @@ def test_page(driver):
 
     checkout_page = CheckoutPage(driver)
     checkout_page.made_cart()
+
+    assert checkout_page.get_total_amount() == 58.29
