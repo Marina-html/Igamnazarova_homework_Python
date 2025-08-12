@@ -1,1 +1,0 @@
-# Igamnazarova_homework_Python
